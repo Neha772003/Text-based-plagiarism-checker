@@ -67,8 +67,70 @@ TextBasedPlagiarismChecker/
 - `NumberFormatException`
 - Custom exception: `EmptyTextException`
 
+## ⚙️ How to Run the Project
 
+1. Install the Java Development Kit (JDK).
+2. Open the project in IntelliJ IDEA.
+3. Ensure all Java files have the correct package declaration: `package com.Neha7;`.
+4. Open `Main.java`.
+5. Run the `main()` method.
+6. Select **1** to compare two texts.
+7. Enter both texts when prompted.
+8. View the comparison report in the console.
+9. Select **2** to exit.
 
+## 💻 Sample Output
+
+```text
+================================
+   TEXT-BASED PLAGIARISM CHECKER
+================================
+1. Compare Two Texts
+2. Exit
+Enter your choice: 1
+
+Enter Text 1:
+Java is a popular programming language.
+
+Enter Text 2:
+Java is a powerful programming language.
+
+========== COMPARISON REPORT ==========
+
+Common Words:
+- java
+- is
+- a
+- programming
+- language
+
+Words Only in Text 1:
+- popular
+
+Words Only in Text 2:
+- powerful
+
+Common Sentences:
+No results found.
+
+Common Word Frequencies:
+...
+
+Word-Set Similarity: 71.43%
+=======================================
+Note: Similarity indicates word overlap,
+not proof of plagiarism.
+```
+
+*Note: The order of words may vary because `HashSet` does not guarantee a specific iteration order. The similarity percentage is calculated from unique words in both texts.*
+
+## 📐 Similarity Calculation
+
+The project uses the Jaccard similarity formula:
+
+**Similarity = (Common Unique Words / Total Unique Words in Both Texts) × 100**
+
+This percentage measures word overlap between the two texts. It does not establish whether plagiarism has occurred.
 
 ## 🚀 Future Enhancements
 
@@ -78,5 +140,6 @@ TextBasedPlagiarismChecker/
 - Ignore common stop words such as "the", "is", and "a".
 - Implement additional similarity algorithms.
 - Export comparison reports to a text file.
+
 
 
